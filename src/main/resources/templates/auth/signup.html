@@ -1,40 +1,35 @@
+<!--회원가입 페이지-->
+<!--signup.html-->
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
 <head>
-    <title>회원가입</title>
-    <div th:replace="/fragments/header.html :: header"></div>
+    <meta charset="UTF-8">
 </head>
 <body>
-<div th:replace="/fragments/nav.html :: nav"></div>
-
-<div class="container">
-    <h1>회원가입</h1>
-    <form th:action="@{/auth/signup}" method="post">
-        <div class="mb-3">
-            <label for="name" class="form-label">이름</label>
-            <input type="text" class="form-control" id="name" name="name" required>
+<form method="post" action="/s">
+    <div class="container">
+        <h1>회원가입</h1>
+        <div class="form-group">
+            <label for="inputId">userId</label>
+            <input type="text" class="form-control" id="inputId" name="userId" placeholder="사용자 아이디">
         </div>
-        <div class="mb-3">
-            <label for="email" class="form-label">이메일</label>
-            <input type="email" class="form-control" id="email" name="email" required>
+        <div class="form-group">
+            <label for="inputName">userName</label>
+            <input type="text" class="form-control" id="inputName" name="userName" placeholder="사용자 이름">
         </div>
-        <div class="mb-3">
-            <label for="password" class="form-label">비밀번호</label>
-            <input type="password" class="form-control" id="password" name="password" required>
+        <div class="form-group">
+            <label for="inputPassword">password</label>
+            <input type="password" class="form-control" id="inputPassword" name="userPw" placeholder="사용자 비밀번호">
         </div>
-        <div class="mb-3">
-            <label for="phone_number" class="form-label">번호</label>
-            <input type="text" class="form-control" id="phone_number" name="address" required>
+        <div class="form-group">
+            <label for="inputEmail">email</label>
+            <input type="password" class="form-control" id="inputEmail" name="userPw" placeholder="사용자 이메일">
         </div>
-        <div class="form-group mb-3">
-            <label for="role">역할:</label>
-            <select class="form-control" id="role" name="role" required>
-                <option value="USER">일반회원</option>
-                <option value="SELLER">판매자</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">가입하기</button>
-    </form>
-</div>
+        <button type="submit" class="btn btn-primary">
+            <a href="/auth/complete">가입 완료</a></button>
+    </div>
+</form>
 </body>
 </html>

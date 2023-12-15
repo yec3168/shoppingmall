@@ -17,8 +17,8 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long orderId;
 
-    @ManyToOne
-    private Member member ; // 주문 회원
+    //@ManyToOne
+    //private Member member ; // 주문 회원
 
     @Column(length = 100, nullable = false)
     private String orderState; // 주문 상태

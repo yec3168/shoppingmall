@@ -5,6 +5,7 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
 
+
 public class MemberDetails implements UserDetails {
 
     private final Member member;
@@ -18,6 +19,12 @@ public class MemberDetails implements UserDetails {
         return null;
     }
 
+    public Long getMemberIndex(){
+        return member.getMemberIndex();
+    }
+    public String getMemberId(){
+        return member.getMemberId();
+    }
     @Override
     public String getPassword() {
         return member.getPassword();
@@ -27,7 +34,10 @@ public class MemberDetails implements UserDetails {
     public String getUsername() {
         return member.getName();
     }
-    
+
+    public String getEmail(){
+        return member.getEmail();
+    }
     // 계정이 만료되지 않았는지 리턴
     @Override
     public boolean isAccountNonExpired() {

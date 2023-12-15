@@ -36,3 +36,6 @@ public class MemberService {
         return memberDTO.toEntity().getMemberIndex();
     }
 }
+
+
+// https://yonghwankim-dev.tistory.com/515  해당페이지참조

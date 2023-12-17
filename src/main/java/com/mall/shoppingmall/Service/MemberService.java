@@ -16,24 +16,19 @@ public class MemberService {
     private final MemberRepository memberRepository;
     //private PasswordEncoder passwordEncoder;
 
-    public Boolean findByMemberId(String memberId){
-        memberRepository.findByMemberId(memberId).ifPresent(member -> {
-            throw new IllegalStateException("이미존재회원입니다");
-        });
-        return false;
-    }
-
-    public Long join(MemberDTO memberDTO){
+    public String join(MemberDTO memberDTO){
         // password 암호화하여 저장
         //memberDTO.setPassword(passwordEncoder.encode(memberDTO.getPassword()));
 
-        boolean result = findByMemberId(memberDTO.getMemberId());
-        System.out.println(result);
-
-        if(!result) {
-            memberRepository.save(memberDTO.toEntity());
+        Member result = memberRepository.findByMemberId(memberDTO.getMemberId());
+        if (result != null){
+            return "이미 등록된 아이디입니다.";
         }
-        return memberDTO.toEntity().getMemberIndex();
+
+
+        memberRepository.save(memberDTO.toEntity());
+
+        return "회원가입이 완료되었습니다.";
     }
 }
 

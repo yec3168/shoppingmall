@@ -2,11 +2,11 @@ package com.mall.shoppingmall.controller;
 
 import com.mall.shoppingmall.Service.MemberService;
 import com.mall.shoppingmall.entitiy.MemberDTO;
-import com.mall.shoppingmall.entitiy.MemberDetails;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
 @RequiredArgsConstructor
@@ -27,9 +27,9 @@ public class PageController {
 
     // summit버튼을 통해 MemberDTO에 데이터 저장
     @PostMapping("/auth/signup")
-    public String createMember(MemberDTO memberDTO){
-        Long memberId = memberService.join(memberDTO);
-        System.out.println("memberId : " + memberId);
+    public String createMember(@RequestBody MemberDTO memberDTO){
+        String result = memberService.join(memberDTO);
+        System.out.println("회원가입 결과 : " + result);
         return"auth/complete";
     }
 

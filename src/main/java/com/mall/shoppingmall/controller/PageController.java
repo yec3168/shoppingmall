@@ -48,6 +48,6 @@ public class PageController {
     //회원가입 성공시
     @GetMapping("/auth/complete")
     public String complete(){
-        return "auth/complete";
+        return "redirect:/";
     }
 }

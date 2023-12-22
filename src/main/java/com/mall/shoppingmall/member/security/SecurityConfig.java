@@ -1,6 +1,6 @@
-package com.mall.shoppingmall.security;
+package com.mall.shoppingmall.member.security;
 
-import com.mall.shoppingmall.Service.MemberService;
+import com.mall.shoppingmall.member.Service.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

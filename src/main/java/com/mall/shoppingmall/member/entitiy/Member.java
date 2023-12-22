@@ -1,5 +1,6 @@
-package com.mall.shoppingmall.entitiy;
+package com.mall.shoppingmall.member.entitiy;
 
+import com.mall.shoppingmall.common.status.Gender;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -24,6 +25,10 @@ public class Member  {
 
     @Column(length = 100, nullable = false)
     private String password; //password
+
+    @Column(length = 10, nullable = false)
+    @Enumerated(EnumType.STRING) // enum형을 데이터 베이스에 어떻게 저장할지
+    private Gender gender;
 
     @Column(length = 100, nullable = false)
     private String email; // email address

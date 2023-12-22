@@ -1,4 +1,4 @@
-package com.mall.shoppingmall.entitiy;
+package com.mall.shoppingmall.member.entitiy;
 
 import jakarta.persistence.*;
 import lombok.Getter;
